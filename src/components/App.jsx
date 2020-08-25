@@ -1,10 +1,11 @@
-import React from 'react';
-
+import React from "react";
+import "../css/App.scss";
+import Navigation from "./Navigation";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello World</h1>
+    <div className="app">
+      <Navigation />
     </div>
   );
 }
