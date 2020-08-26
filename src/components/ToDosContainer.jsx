@@ -1,23 +1,14 @@
 import React from "react";
+import ToDoItem from "./ToDoItem";
 
-export default function ToDosContainer() {
-  const todos = [
-    { text: "Wash myFace", done: false },
-    { text: "Do live coding", done: false },
-    { text: "Take out the thrash", done: false },
-    { text: "Code more", done: false },
-  ];
+export default function ToDosContainer(props) {
 
-  const todosItems = todos.map((task) => {
+
+  const todosItems = props.toDosProps.map((task) => {
     return (
-      <div className="todo-item">
-        <p>{task.text}</p>
-        <div className="action">
-          <button className="btn">&#10004;</button>
-        </div>
-      </div>
+          <ToDoItem taskProps={task}/>
     );
-  });
+  })
 
   return (
     <div className="todos-container">
@@ -30,7 +21,7 @@ export default function ToDosContainer() {
 
       <div className="todos">
         <h3>TO DO</h3>
-        {todosItems}
+        { todosItems }
       </div>
     </div>
   );
